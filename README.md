@@ -7,8 +7,8 @@
 
 * First you need to clone Coffee Place project to an appropriate directory of your web server:
 ```
-$cd /your/server/web/root
-$git clone https://github.com/iegorlopatin/globelink.git
+cd /your/server/web/root
+git clone https://github.com/iegorlopatin/globelink.git
 ```
 
 * Next you need to configure your Web Server (I prefer to use Mac default [apache2 server](https://httpd.apache.org/docs/trunk/getting-started.html). Please keep in mind that you are going to need to turn on mysql, php_pdo and vhost modules if they are not turned on yet. You can do it in httpd.conf file of your apache2 server.
@@ -29,6 +29,60 @@ $git clone https://github.com/iegorlopatin/globelink.git
 </VirtualHost>
 ```
 * Next your need to set up [mysql database server](https://dev.mysql.com/doc/refman/8.0/en/)
+  * Create "globelink" user with "globelink" password
+  * Create globelink database
+  * If you decided to use other database or user, please edit */PATH TO PROJECT/globelink/environments/dev/common/config/main-local.php*, section 'db':
+```
+'db' => [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host=127.0.01;dbname=globelink',
+    'username' => 'globelink',
+    'password' => 'globelink',
+    'charset' => 'utf8',
+],
+```
+
+* After you've set up DB and Web Server, you can run application initialisation scripts:
+```
+php init // select dev env and follow ferther instractions
+php php yii migrate/up
+```
 
 
+Project Directory Structure
+-------------------
 
+```
+common
+    config/              contains shared configurations
+    mail/                contains view files for e-mails
+    models/              contains model classes used in both backend and frontend
+    tests/               contains tests for common classes    
+console
+    config/              contains console configurations
+    controllers/         contains console controllers (commands)
+    migrations/          contains database migrations
+    models/              contains console-specific model classes
+    runtime/             contains files generated during runtime
+backend
+    assets/              contains application assets such as JavaScript and CSS
+    config/              contains backend configurations
+    controllers/         contains Web controller classes
+    models/              contains backend-specific model classes
+    runtime/             contains files generated during runtime
+    tests/               contains tests for backend application    
+    views/               contains view files for the Web application
+    web/                 contains the entry script and Web resources
+frontend
+    assets/              contains application assets such as JavaScript and CSS
+    config/              contains frontend configurations
+    controllers/         contains Web controller classes
+    models/              contains frontend-specific model classes
+    runtime/             contains files generated during runtime
+    tests/               contains tests for frontend application
+    views/               contains view files for the Web application
+    web/                 contains the entry script and Web resources
+    widgets/             contains frontend widgets
+vendor/                  contains dependent 3rd-party packages
+environments/            contains environment-based overrides
+```
