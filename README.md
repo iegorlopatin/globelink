@@ -48,7 +48,7 @@ git clone https://github.com/iegorlopatin/globelink.git
 ```
 composer install
 php init #select dev env and follow ferther instractions
-php php yii migrate/up
+php yii migrate/up
 ```
 
 
