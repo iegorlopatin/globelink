@@ -9,6 +9,7 @@
 ```
 cd /your/server/web/root
 git clone https://github.com/iegorlopatin/globelink.git
+cd globelink
 ```
 
 * Next you need to configure your Web Server (I prefer to use Mac default [apache2 server](https://httpd.apache.org/docs/trunk/getting-started.html). Please keep in mind that you are going to need to turn on mysql, php_pdo and vhost modules if they are not turned on yet. You can do it in httpd.conf file of your apache2 server.
