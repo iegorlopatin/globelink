@@ -31,7 +31,9 @@ git clone https://github.com/iegorlopatin/globelink.git
 * Next your need to set up [mysql database server](https://dev.mysql.com/doc/refman/8.0/en/)
   * Create "globelink" user with "globelink" password
   * Create globelink database
-  * If you decided to use other database or user, please edit */PATH TO PROJECT/globelink/environments/dev/common/config/main-local.php*, section 'db':
+  * If you decided to use other database or user, please edit 'db' section of': 
+    - /PATH TO PROJECT/globelink/environments/dev/common/config/main-local.php*
+    - /PATH TO PROJECT/globelink/environments/dev/console/config/main-local.php*
 ```
 'db' => [
     'class' => 'yii\db\Connection',
