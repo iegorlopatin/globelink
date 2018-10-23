@@ -29,7 +29,7 @@ class m181022_182519_populate_database_with_init_data extends Migration
     private function insertUsers()
     {
         $this->insert('user', [
-            'username' => 'First Employee',
+            'username' => 'Mark',
             'role' => 'employee',
             'auth_key' => 'oDWCLUbJrfti_jzcIp1Kmu6F6-gWGxwo',
             'password_hash' => '$2y$13$6gk0eI//HR4NmnUpSTPZXOXocLlW6AKiczrhNyHZ4ZtWoSidv9nYu',

@@ -51,9 +51,24 @@ php init #select dev env and follow ferther instractions
 php yii migrate/up
 ```
 
+* After that you should be able to open [globelink.local](http://globelink.local) in browser
+
+Working with "Coffee Place" app
+-------------------------------
+
+* When you first open [globelink.local](http://globelink.local) page, you should be able to see a "Sign Up" form
+  * Use this Sign Up form to create your user. If all successful, after that you should be able to see a page with
+    a list of available coffee and a form to place ad order for a coffee.
+  * Try it out and place an order, this form has validation, so don't be scared to play around with it.
+  
+* Now, when you have an order placed, you can login to [globelink-backend.local/](http://globelink-backend.local/) - 
+  Admin Panel for Coffee Place, user: "Mark", password: "globelink"
+  * Now you should be able to see an Admin Section with two tabs - "Coffee", "Orders"
+  * "Coffee" tab shows you a list of coffees and allows you to create new one or update existing
+  * "Orders" tab allows you to process clients order, which automatically will withdraw an appropriate amount of coffee from the stock
 
 Project Directory Structure
--------------------
+---------------------------
 
 ```
 common
