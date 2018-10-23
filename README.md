@@ -1,60 +1,34 @@
 <p align="center">
-    <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
-    </a>
-    <h1 align="center">Yii 2 Advanced Project Template</h1>
+    <h1 align="center">Globelink Coffee Place</h1>
     <br>
 </p>
 
-Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+## Project Installation Guide:
 
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
-
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
-
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
-
-[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-advanced.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-advanced)
-
-DIRECTORY STRUCTURE
--------------------
-
+* First you need to clone Coffee Place project to an appropriate directory of your web server:
 ```
-common
-    config/              contains shared configurations
-    mail/                contains view files for e-mails
-    models/              contains model classes used in both backend and frontend
-    tests/               contains tests for common classes    
-console
-    config/              contains console configurations
-    controllers/         contains console controllers (commands)
-    migrations/          contains database migrations
-    models/              contains console-specific model classes
-    runtime/             contains files generated during runtime
-backend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains backend configurations
-    controllers/         contains Web controller classes
-    models/              contains backend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for backend application    
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-frontend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains frontend configurations
-    controllers/         contains Web controller classes
-    models/              contains frontend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for frontend application
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-    widgets/             contains frontend widgets
-vendor/                  contains dependent 3rd-party packages
-environments/            contains environment-based overrides
+$cd /your/server/web/root
+$git clone https://github.com/iegorlopatin/globelink.git
 ```
+
+* Next you need to configure your Web Server (I prefer to use Mac default [apache2 server](https://httpd.apache.org/docs/trunk/getting-started.html). Please keep in mind that you are going to need to turn on mysql, php_pdo and vhost modules if they are not turned on yet. You can do it in httpd.conf file of your apache2 server.
+* After that you are going to need to set up virtual hosts for your application (httpd-vhosts.conf file in case of apache server), put following code in it:
+```
+<VirtualHost *:80>
+  DocumentRoot "/YOUR PROJECT DIR/globelink/backend/web"
+  ServerName globelink-backend.local
+  ErrorLog "/path/to/your/server/logdir/globelink-admin-panel-error_log"
+  CustomLog "/path/to/your/server/logdir/globelink-admin-panel-access_log" common
+</VirtualHost>
+
+<VirtualHost *:80>
+  DocumentRoot "/YOUR PROJECT DIR/globelink/frontend/web"
+  ServerName globelink.local
+  ErrorLog "/path/to/your/server/logdir/globelink-error_log"
+  CustomLog "/path/to/your/server/logdir/globelink-access_log" common
+</VirtualHost>
+```
+* Next your need to set up [mysql database server](https://dev.mysql.com/doc/refman/8.0/en/)
+
+
+
