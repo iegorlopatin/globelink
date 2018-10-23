@@ -39,9 +39,10 @@ use yii\helpers\Url;
             ]);
         ?>
 
-        <h3> Create/Update Coffee: </h3>
-        <p>* Put a new name if you want to create new coffee</p>
-        <p>* Use an existing name to update coffee</p>
+        <h3> Create Coffee: </h3>
+<!--        <h3> Create/Update Coffee: </h3>-->
+<!--        <p>* Put a new name if you want to create new coffee</p>-->
+<!--        <p>* Use an existing name to update coffee</p>-->
         <?php echo '<h3>' . nl2br(Html::encode($message)) . '</h3>';?>
 
         <?php
