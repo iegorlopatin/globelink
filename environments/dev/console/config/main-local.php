@@ -4,11 +4,13 @@ return [
     'modules' => [
         'gii' => 'yii\gii\Module',
     ],
-    'db' => [
-        'class' => 'yii\db\Connection',
-        'dsn' => 'mysql:host=127.0.01;dbname=globelink',
-        'username' => 'globelink',
-        'password' => 'globelink',
-        'charset' => 'utf8',
+    'components' => [
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=127.0.01;dbname=globelink',
+            'username' => 'globelink',
+            'password' => 'globelink',
+            'charset' => 'utf8',
+        ],
     ],
 ];
