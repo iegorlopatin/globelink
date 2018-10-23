@@ -36,13 +36,10 @@ class SiteController extends Controller
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['logout', 'submit-order', 'validate-order'],
+                        'actions' => ['index', 'logout', 'submit-order', 'validate-order'],
                         'roles' => ['@'],
                     ],
                 ],
-                'denyCallback' => function () {
-                    return Yii::$app->response->redirect(['site/login']);
-                },
             ],
             'verbs' => [
                 'class' => VerbFilter::className(),
