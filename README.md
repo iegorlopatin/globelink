@@ -57,7 +57,8 @@ php yii migrate/up
 Working with "Coffee Place" app
 -------------------------------
 
-* When you first open [globelink.local](http://globelink.local) page, you should be able to see a "Sign Up" form
+* When you first open [globelink.local](http://globelink.local) page, you should be able to see "Login" form and a "Sign Up"
+  tab in a header menu, go to sign up page and there you should find Sign Up form.
   * Use this Sign Up form to create your user. If all successful, after that you should be able to see a page with
     a list of available coffee and a form to place ad order for a coffee.
   * Try it out and place an order, this form has validation, so don't be scared to play around with it.
