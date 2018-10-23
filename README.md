@@ -41,10 +41,11 @@ git clone https://github.com/iegorlopatin/globelink.git
     'charset' => 'utf8',
 ],
 ```
-
+* Install *composer* if you haven't it installed
 * After you've set up DB and Web Server, you can run application initialisation scripts:
 ```
-php init // select dev env and follow ferther instractions
+composer install
+php init #select dev env and follow ferther instractions
 php php yii migrate/up
 ```
 
